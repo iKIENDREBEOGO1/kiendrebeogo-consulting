@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v=7af23ce5">
 </head>
 <body>
 <header class="entete">
@@ -66,23 +66,25 @@
   </div>
 </section>
 <section id="contact" class="contact">
-  <div class="conteneur contact-in">
-    <div><h2>Parlons de votre projet</h2><p>Décrivez votre besoin en quelques lignes : contexte, zone, calendrier. Réponse sous 48 heures ouvrées.</p>
-      <form class="formulaire" id="formulaire" action="https://formsubmit.co/innocent@kiendrebeogo-consulting.com" method="POST">
-        <input type="hidden" name="_subject" value="Site web : Demande d&#x27;information">
-        <input type="hidden" name="_template" value="table">
-        <input type="text" name="_honey" class="sr" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="champs2">
-          <label>Nom et prénom<input name="nom" required autocomplete="name"></label>
-          <label>Votre e-mail<input name="email" type="email" required autocomplete="email"></label>
-        </div>
+  <div class="conteneur">
+    <div class="contact-tete"><h2>Parlons de votre projet</h2><p>Décrivez votre besoin en quelques lignes : contexte, zone, calendrier. Réponse sous 48 heures ouvrées.</p></div>
+    <form class="formulaire" id="formulaire" action="https://formsubmit.co/innocent@kiendrebeogo-consulting.com" method="POST">
+      <input type="hidden" name="_subject" value="Site web : Demande d&#x27;information">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" class="sr" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="champs3">
+        <label>Nom et prénom<input name="nom" required autocomplete="name"></label>
+        <label>Votre e-mail<input name="email" type="email" required autocomplete="email"></label>
         <label>Organisation (facultatif)<input name="organisation" autocomplete="organization"></label>
-        <label>Votre besoin<textarea name="message" rows="5" required placeholder="Contexte, zone, calendrier, type d&#x27;étude…"></textarea></label>
+      </div>
+      <label>Votre besoin<textarea name="message" rows="5" required placeholder="Contexte, zone, calendrier, type d&#x27;étude…"></textarea></label>
+      <div class="form-bas">
         <button class="btn btn-orange" type="submit" data-envoi="Envoi en cours…">Envoyer le message</button>
         <p class="retour" role="status" aria-live="polite" data-ok="Merci, votre message est bien envoyé. Réponse sous 48 heures ouvrées." data-err="L&#x27;envoi a échoué. Écrivez directement à innocent@kiendrebeogo-consulting.com."></p>
-      </form></div>
+      </div>
+    </form>
+    <p class="ou">Ou directement :</p>
     <ul class="coord">
-      <li class="ou">Ou directement :</li>
       <li><span>E-mail</span><div class="ligne-copie"><a href="mailto:innocent@kiendrebeogo-consulting.com">innocent@kiendrebeogo-consulting.com</a><button class="copier" type="button" data-texte="innocent@kiendrebeogo-consulting.com" data-ok="Copié">Copier</button></div></li>
       <li><span>Téléphone</span><div class="ligne-copie"><a href="tel:+22652731971">+226 52 73 19 71</a><button class="copier" type="button" data-texte="+226 52 73 19 71" data-ok="Copié">Copier</button></div>
         <a class="btn btn-ligne btn-appel" href="tel:+22652731971">Appeler</a></li>

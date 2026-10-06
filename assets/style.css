@@ -66,25 +66,25 @@ h1,h2,h3{font-family:var(--titre);color:var(--marine);line-height:1.2;margin:0}
 .reseau{margin-top:52px;background:var(--marine);color:#D6DEEE;border-radius:var(--rayon);padding:34px 36px;border-left:6px solid var(--orange)}
 .reseau h3{color:var(--blanc);font-size:21px;margin-bottom:10px}.reseau p{margin:0}
 .contact{background:linear-gradient(135deg,var(--marine) 0%,var(--marine2) 100%);color:#D6DEEE;padding:88px 0}
-.contact-in{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:start}
-.formulaire{display:grid;gap:14px;margin-top:8px}.champs2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .formulaire label{display:grid;gap:6px;font-size:14px;font-weight:600;color:var(--blanc)}
 .formulaire input,.formulaire textarea{font:inherit;font-weight:400;font-size:16px;padding:12px 14px;border-radius:8px;border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:var(--blanc);width:100%}
 .formulaire input:focus,.formulaire textarea:focus{outline:none;border-color:var(--ciel);background:rgba(255,255,255,.12)}
 .formulaire textarea{resize:vertical}.formulaire ::placeholder{color:#8FA0C4}
-.formulaire button{justify-self:start;border:0;cursor:pointer;font-family:inherit}.formulaire button:disabled{opacity:.7;cursor:wait}
-.retour{margin:0!important;font-size:15px!important;min-height:1em}.retour.ok{color:#7FE0A8}.retour.err{color:#FFB38A}
-.ou{font-size:14px;color:#9FB0D0!important;padding-top:0!important}
+.formulaire button{border:0;cursor:pointer;font-family:inherit}.formulaire button:disabled{opacity:.7;cursor:wait}
+.retour{margin:0;font-size:15px}.retour.ok{color:#7FE0A8}.retour.err{color:#FFB38A}
 .ligne-copie{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .copier{flex:none;font:inherit;font-size:12px;font-weight:600;color:var(--ciel);background:none;border:1px solid rgba(0,176,240,.5);border-radius:6px;padding:4px 10px;cursor:pointer}
 .copier:hover{background:rgba(0,176,240,.12)}
 .btn-appel{display:none;margin-top:12px;padding:10px 20px}
 @media (hover:none) and (pointer:coarse){.btn-appel{display:inline-block}}
 .contact h2{color:var(--blanc);font-size:clamp(28px,3.6vw,38px);font-weight:800}
-.contact p{font-size:18px;margin:16px 0 30px}
-.coord{list-style:none;margin:0;padding:28px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:var(--rayon)}
-.coord li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12);color:var(--blanc);overflow-wrap:anywhere}
-.coord li:last-child{border:0}
+.contact-tete{max-width:760px;margin-bottom:30px}.contact-tete p{font-size:18px;margin:14px 0 0}
+.formulaire{display:grid;gap:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:32px}
+.champs3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.form-bas{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.ou{font-size:14px;letter-spacing:.06em;color:#9FB0D0;margin:40px 0 14px}
+.coord{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1.85fr 1.1fr 1fr 1fr;gap:16px}
+.coord li{padding:18px 18px;font-size:15px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--rayon);color:var(--blanc);overflow-wrap:anywhere}
 .coord span{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ciel);font-weight:600}
 .coord a{color:var(--blanc);text-decoration:none}.coord a:hover{color:var(--orange)}
 .pied{background:#001A4F;color:#9FB0D0;padding:34px 0;font-size:14px}
@@ -92,12 +92,12 @@ h1,h2,h3{font-family:var(--titre);color:var(--marine);line-height:1.2;margin:0}
 .pied img{height:48px;width:auto}.pied p{margin:0;text-align:right}
 :focus-visible{outline:3px solid var(--ciel);outline-offset:3px}
 @media (max-width:960px){.grille{grid-template-columns:repeat(2,1fr)}.etapes{grid-template-columns:repeat(2,1fr)}.chiffres{grid-template-columns:repeat(2,1fr)}
-.contact-in{grid-template-columns:1fr}.rayures{width:70%;opacity:.45}}
+.coord{grid-template-columns:1fr 1fr}.champs3{grid-template-columns:1fr 1fr}.rayures{width:70%;opacity:.45}}
 @media (max-width:720px){.rayures{opacity:.22}}
 @media (max-width:720px){body{font-size:16px}
 .burger{display:block}.menu{position:absolute;top:72px;left:0;right:0;background:var(--blanc);flex-direction:column;align-items:flex-start;gap:0;padding:8px 16px 16px;border-bottom:1px solid var(--ligne);display:none}
 .menu.ouvert{display:flex}.menu a{padding:12px 0;width:100%}.menu .langue{width:auto;margin-top:8px}
 .marque img{height:44px}.hero-in{padding:64px 0 72px}.section,.contact{padding:64px 0}
-.grille,.etapes,.libre,.champs2{grid-template-columns:1fr}.chiffre strong{font-size:22px}
+.grille,.etapes,.libre,.champs3,.coord{grid-template-columns:1fr}.formulaire{padding:20px}.chiffre strong{font-size:22px}
 .parcours li{grid-template-columns:1fr;gap:4px}.pied-in{flex-direction:column;align-items:flex-start}.pied p{text-align:left}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
