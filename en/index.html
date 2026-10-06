@@ -39,7 +39,7 @@
     <p class="kicker">Statistics · Surveys · Monitoring and evaluation · Data</p>
     <h1>Reliable data for better decisions.</h1>
     <p class="intro">Innocent Kiendrebeogo Consulting supports NGOs, public institutions and development partners in West Africa, from survey design to analysis and the presentation of results.</p>
-    <div class="boutons"><a class="btn btn-orange" href="mailto:innocent@kiendrebeogo-consulting.com?subject=Information request">Discuss a project</a><a class="btn btn-ligne" href="#services">See our services</a></div>
+    <div class="boutons"><a class="btn btn-orange" href="#contact">Discuss a project</a><a class="btn btn-ligne" href="#services">See our services</a></div>
   </div>
 </section>
 <section id="services" class="section">
@@ -68,10 +68,24 @@
 <section id="contact" class="contact">
   <div class="conteneur contact-in">
     <div><h2>Let&#x27;s talk about your project</h2><p>Describe your needs in a few lines: context, area, timeline. Reply within two working days.</p>
-      <div class="boutons"><a class="btn btn-orange" href="mailto:innocent@kiendrebeogo-consulting.com?subject=Information request">Send an e-mail</a><a class="btn btn-ligne" href="tel:+22652731971">Call</a></div></div>
+      <form class="formulaire" id="formulaire" action="https://formsubmit.co/innocent@kiendrebeogo-consulting.com" method="POST">
+        <input type="hidden" name="_subject" value="Site web : Information request">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" class="sr" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="champs2">
+          <label>Full name<input name="nom" required autocomplete="name"></label>
+          <label>Your e-mail<input name="email" type="email" required autocomplete="email"></label>
+        </div>
+        <label>Organization (optional)<input name="organisation" autocomplete="organization"></label>
+        <label>Your needs<textarea name="message" rows="5" required placeholder="Context, area, timeline, type of study…"></textarea></label>
+        <button class="btn btn-orange" type="submit" data-envoi="Sending…">Send message</button>
+        <p class="retour" role="status" aria-live="polite" data-ok="Thank you, your message has been sent. Reply within two working days." data-err="Sending failed. Please write directly to innocent@kiendrebeogo-consulting.com."></p>
+      </form></div>
     <ul class="coord">
-      <li><span>E-mail</span><a href="mailto:innocent@kiendrebeogo-consulting.com">innocent@kiendrebeogo-consulting.com</a></li>
-      <li><span>Phone</span><a href="tel:+22652731971">+226 52 73 19 71</a></li>
+      <li class="ou">Or directly:</li>
+      <li><span>E-mail</span><div class="ligne-copie"><a href="mailto:innocent@kiendrebeogo-consulting.com">innocent@kiendrebeogo-consulting.com</a><button class="copier" type="button" data-texte="innocent@kiendrebeogo-consulting.com" data-ok="Copied">Copy</button></div></li>
+      <li><span>Phone</span><div class="ligne-copie"><a href="tel:+22652731971">+226 52 73 19 71</a><button class="copier" type="button" data-texte="+226 52 73 19 71" data-ok="Copied">Copy</button></div>
+        <a class="btn btn-ligne btn-appel" href="tel:+22652731971">Call</a></li>
       <li><span>Location</span>Ouagadougou, Burkina Faso</li>
       <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/innocent-kiendrebeogo-86a3a918b/" target="_blank" rel="noopener">Innocent Kiendrebeogo</a></li>
     </ul>
@@ -88,6 +102,17 @@
 const b=document.querySelector('.burger'),m=document.getElementById('menu');
 b.addEventListener('click',()=>{const o=m.classList.toggle('ouvert');b.setAttribute('aria-expanded',o)});
 m.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{m.classList.remove('ouvert');b.setAttribute('aria-expanded',false)}));
+document.querySelectorAll('.copier').forEach(c=>c.addEventListener('click',async()=>{
+  const t0=c.textContent;try{await navigator.clipboard.writeText(c.dataset.texte)}catch(e){const z=document.createElement('textarea');z.value=c.dataset.texte;document.body.appendChild(z);z.select();document.execCommand('copy');z.remove()}
+  c.textContent=c.dataset.ok;setTimeout(()=>c.textContent=t0,1800)}));
+const f=document.getElementById('formulaire'),r=f.querySelector('.retour'),sb=f.querySelector('button[type=submit]');
+f.addEventListener('submit',async ev=>{
+  ev.preventDefault();if(f._honey.value)return;const t0=sb.textContent;sb.disabled=true;sb.textContent=sb.dataset.envoi;r.className='retour';
+  try{const res=await fetch(f.action.replace('formsubmit.co/','formsubmit.co/ajax/'),{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)});
+    const j=await res.json().catch(()=>({}));if(!res.ok||j.success===false||j.success==='false')throw new Error(j.message||res.status);
+    r.textContent=r.dataset.ok;r.classList.add('ok');f.reset()}
+  catch(e){r.textContent=r.dataset.err;r.classList.add('err')}
+  finally{sb.disabled=false;sb.textContent=t0}});
 </script>
 </body>
 </html>

@@ -66,7 +66,20 @@ h1,h2,h3{font-family:var(--titre);color:var(--marine);line-height:1.2;margin:0}
 .reseau{margin-top:52px;background:var(--marine);color:#D6DEEE;border-radius:var(--rayon);padding:34px 36px;border-left:6px solid var(--orange)}
 .reseau h3{color:var(--blanc);font-size:21px;margin-bottom:10px}.reseau p{margin:0}
 .contact{background:linear-gradient(135deg,var(--marine) 0%,var(--marine2) 100%);color:#D6DEEE;padding:88px 0}
-.contact-in{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+.contact-in{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:start}
+.formulaire{display:grid;gap:14px;margin-top:8px}.champs2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.formulaire label{display:grid;gap:6px;font-size:14px;font-weight:600;color:var(--blanc)}
+.formulaire input,.formulaire textarea{font:inherit;font-weight:400;font-size:16px;padding:12px 14px;border-radius:8px;border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:var(--blanc);width:100%}
+.formulaire input:focus,.formulaire textarea:focus{outline:none;border-color:var(--ciel);background:rgba(255,255,255,.12)}
+.formulaire textarea{resize:vertical}.formulaire ::placeholder{color:#8FA0C4}
+.formulaire button{justify-self:start;border:0;cursor:pointer;font-family:inherit}.formulaire button:disabled{opacity:.7;cursor:wait}
+.retour{margin:0!important;font-size:15px!important;min-height:1em}.retour.ok{color:#7FE0A8}.retour.err{color:#FFB38A}
+.ou{font-size:14px;color:#9FB0D0!important;padding-top:0!important}
+.ligne-copie{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.copier{flex:none;font:inherit;font-size:12px;font-weight:600;color:var(--ciel);background:none;border:1px solid rgba(0,176,240,.5);border-radius:6px;padding:4px 10px;cursor:pointer}
+.copier:hover{background:rgba(0,176,240,.12)}
+.btn-appel{display:none;margin-top:12px;padding:10px 20px}
+@media (hover:none) and (pointer:coarse){.btn-appel{display:inline-block}}
 .contact h2{color:var(--blanc);font-size:clamp(28px,3.6vw,38px);font-weight:800}
 .contact p{font-size:18px;margin:16px 0 30px}
 .coord{list-style:none;margin:0;padding:28px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:var(--rayon)}
@@ -85,6 +98,6 @@ h1,h2,h3{font-family:var(--titre);color:var(--marine);line-height:1.2;margin:0}
 .burger{display:block}.menu{position:absolute;top:72px;left:0;right:0;background:var(--blanc);flex-direction:column;align-items:flex-start;gap:0;padding:8px 16px 16px;border-bottom:1px solid var(--ligne);display:none}
 .menu.ouvert{display:flex}.menu a{padding:12px 0;width:100%}.menu .langue{width:auto;margin-top:8px}
 .marque img{height:44px}.hero-in{padding:64px 0 72px}.section,.contact{padding:64px 0}
-.grille,.etapes,.libre{grid-template-columns:1fr}.chiffre strong{font-size:22px}
+.grille,.etapes,.libre,.champs2{grid-template-columns:1fr}.chiffre strong{font-size:22px}
 .parcours li{grid-template-columns:1fr;gap:4px}.pied-in{flex-direction:column;align-items:flex-start}.pied p{text-align:left}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
