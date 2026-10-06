@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kiendrebeogo-consulting.com/sitemap.xml
