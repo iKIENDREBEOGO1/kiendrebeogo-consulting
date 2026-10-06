@@ -113,7 +113,7 @@ f.addEventListener('submit',async ev=>{
   try{const res=await fetch(f.action.replace('formsubmit.co/','formsubmit.co/ajax/'),{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)});
     const j=await res.json().catch(()=>({}));if(!res.ok||j.success===false||j.success==='false')throw new Error(j.message||res.status);
     r.textContent=r.dataset.ok;r.classList.add('ok');f.reset()}
-  catch(e){r.textContent=r.dataset.err;r.classList.add('err')}
+  catch(e){r.textContent=r.dataset.err+(e.message&&isNaN(e.message)?' ('+e.message+')':'');r.classList.add('err')}
   finally{sb.disabled=false;sb.textContent=t0}});
 </script>
 </body>
